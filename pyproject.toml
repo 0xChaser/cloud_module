@@ -1,0 +1,10 @@
+[project]
+name = "cloud-module"
+version = "0.1.0"
+description = "AWS Infrastructure w/  Pulumi"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pulumi>=3.0.0,<4.0.0",
+    "pulumi-aws>=6.0.0,<7.0.0",
+]

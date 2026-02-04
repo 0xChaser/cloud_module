@@ -1,0 +1,5 @@
+config:
+  aws:region: eu-west-3
+  cloud-module:environment: dev
+  cloud-module:db_name: appdb
+  cloud-module:db_username: admin
