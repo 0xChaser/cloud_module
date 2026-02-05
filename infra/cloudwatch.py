@@ -113,7 +113,7 @@ def create_alarms(
 
     lambda_error_alarm = aws.cloudwatch.MetricAlarm(
         f"lambda-errors-alarm-{environment}",
-        alarm_name=f"lambda-errors-{environment}",
+        name=f"lambda-errors-{environment}",
         comparison_operator="GreaterThanThreshold",
         evaluation_periods=2,
         metric_name="Errors",
@@ -135,7 +135,7 @@ def create_alarms(
 
     lambda_duration_alarm = aws.cloudwatch.MetricAlarm(
         f"lambda-duration-alarm-{environment}",
-        alarm_name=f"lambda-duration-{environment}",
+        name=f"lambda-duration-{environment}",
         comparison_operator="GreaterThanThreshold",
         evaluation_periods=3,
         metric_name="Duration",
@@ -156,7 +156,7 @@ def create_alarms(
 
     rds_cpu_alarm = aws.cloudwatch.MetricAlarm(
         f"rds-cpu-alarm-{environment}",
-        alarm_name=f"rds-cpu-{environment}",
+        name=f"rds-cpu-{environment}",
         comparison_operator="GreaterThanThreshold",
         evaluation_periods=3,
         metric_name="CPUUtilization",
@@ -178,7 +178,7 @@ def create_alarms(
 
     rds_storage_alarm = aws.cloudwatch.MetricAlarm(
         f"rds-storage-alarm-{environment}",
-        alarm_name=f"rds-storage-{environment}",
+        name=f"rds-storage-{environment}",
         comparison_operator="LessThanThreshold",
         evaluation_periods=2,
         metric_name="FreeStorageSpace",
@@ -200,7 +200,7 @@ def create_alarms(
 
     rds_connections_alarm = aws.cloudwatch.MetricAlarm(
         f"rds-connections-alarm-{environment}",
-        alarm_name=f"rds-connections-{environment}",
+        name=f"rds-connections-{environment}",
         comparison_operator="GreaterThanThreshold",
         evaluation_periods=2,
         metric_name="DatabaseConnections",

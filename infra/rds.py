@@ -25,7 +25,7 @@ def create_rds_parameter_group():
 
     parameter_group = aws.rds.ParameterGroup(
         f"rds-pg-params-{environment}",
-        family="postgres15",
+        family="postgres17",
         description="Custom parameter group for PostgreSQL 15",
         parameters=[
             aws.rds.ParameterGroupParameterArgs(
@@ -54,13 +54,13 @@ def create_rds_instance(
     monitoring_role_arn: pulumi.Output,
 ):
 
-    db_username = config.get("db_username") or "admin"
+    db_username = config.get("db_username") or "dbadmin"
 
     rds_instance = aws.rds.Instance(
         f"main-db-{environment}",
         identifier=f"main-db-{environment}",
         engine="postgres",
-        engine_version="15.4",
+        engine_version="17.7",
         instance_class="db.t3.micro",
         allocated_storage=20,
         max_allocated_storage=100,

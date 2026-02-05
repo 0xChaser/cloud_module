@@ -55,7 +55,7 @@ def handler(event, context):
 
     lambda_function = aws.lambda_.Function(
         f"api-handler-{environment}",
-        function_name=f"api-handler-{environment}",
+        name=f"api-handler-{environment}",
         runtime="python3.11",
         handler="lambda_function.handler",
         role=lambda_role.arn,

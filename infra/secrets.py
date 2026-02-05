@@ -9,7 +9,7 @@ import string
 
 config = pulumi.Config()
 environment = config.get("environment") or "dev"
-db_username = config.get("db_username") or "admin"
+db_username = config.get("db_username") or "dbadmin"
 
 
 def generate_password(length: int = 32) -> str:
